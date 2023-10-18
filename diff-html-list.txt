@@ -1,0 +1,5 @@
+dist/en/about.html
+---
+dist/en/about-added.html
+dist/en/account-settings/account-management-for-on-premise/changing-your-password.html
+dist/en/integrations/amazon-api-gateway-integration-added.html
