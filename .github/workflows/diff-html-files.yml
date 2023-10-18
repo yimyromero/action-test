@@ -30,7 +30,20 @@ jobs:
         run: echo Hello, world!
 
       # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
+      - name: Create list of html files
         run: |
           touch html-list.txt,
           find dist -name '*.html' | sort >> html-list.txt
+      - name: setup git config
+        run: |
+          # setup username and email
+          git config user.name "yimy"
+          git config user.email "<>"
+
+      - name: commit 
+        run: |
+          git add html-list.txt
+          git commit -m "update list of html files"
+          git push origin master
+
+    
