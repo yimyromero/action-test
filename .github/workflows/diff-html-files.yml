@@ -41,7 +41,7 @@ jobs:
         run: |
           # commit and push
           git add diff-html-list.txt
-          git commit -m "update list of current html files"
+          git commit --allow-empty -m "update list of current html files"
           git push origin main
 
     
