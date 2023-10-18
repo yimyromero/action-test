@@ -33,4 +33,4 @@ jobs:
       - name: Run a multi-line script
         run: |
           touch html-list.txt,
-          find ParentA -name '*.html' | sort
+          find dist -name '*.html' | sort >> html-list.txt
