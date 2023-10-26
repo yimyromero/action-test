@@ -42,7 +42,6 @@ jobs:
         # setup username and email
         git config user.name "yimy"
         git config user.email "<>"
-
     - name: commit 
       run: |
         # commit and push
