@@ -25,39 +25,39 @@ jobs:
       html_list_changed: ${{ steps.check_list_changed.outputs.html_list_changed }}
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
-        with:
-          fetch-depth: 2
-        id: check_list_changed
-      # Runs a set of commands using the runners shell
-      - name: Create list of html files
-        run: |
-          touch new-html-list.txt,
-          find dist -name '*.html' | sort > new-html-list.txt
-          diff --suppress-common-lines current-html-list.txt new-html-list.txt | grep -E '^[< >]' | sort > diff-html-list.txt
-          rm new-html-list.txt
-      - name: setup git config
-        run: |
-          # setup username and email
-          git config user.name "yimy"
-          git config user.email "<>"
+    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+    - uses: actions/checkout@v3
+      with:
+        fetch-depth: 2
+      id: check_list_changed
+    # Runs a set of commands using the runners shell
+    - name: Create list of html files
+      run: |
+        touch new-html-list.txt,
+        find dist -name '*.html' | sort > new-html-list.txt
+        diff --suppress-common-lines current-html-list.txt new-html-list.txt | grep -E '^[< >]' | sort > diff-html-list.txt
+        rm new-html-list.txt
+    - name: setup git config
+      run: |
+        # setup username and email
+        git config user.name "yimy"
+        git config user.email "<>"
 
-      - name: commit 
-        run: |
-          # commit and push
-          git add diff-html-list.txt
-          git commit --allow-empty -m "update list of current html files"
-          git push origin main
-      # Check if the file diff-html-list.txt changed
-      - name: Check if the file diff-html-list.txt changed
-        run: |
-          git diff --name-only HEAD^ HEAD | grep diff-html-list.txt
-          if [ $? -eq 0 ]; then
-            echo "::set-output name=html_list_changed::true"
-          else
-            echo "::set-output name=html_list_changed::false"
-          fi
+    - name: commit 
+      run: |
+        # commit and push
+        git add diff-html-list.txt
+        git commit --allow-empty -m "update list of current html files"
+        git push origin main
+    # Check if the file diff-html-list.txt changed
+    - name: Check if the file diff-html-list.txt changed
+      run: |
+        git diff --name-only HEAD^ HEAD | grep diff-html-list.txt
+        if [ $? -eq 0 ]; then
+          echo "::set-output name=html_list_changed::true"
+        else
+          echo "::set-output name=html_list_changed::false"
+        fi
 
   # This job will run only if the previous job changed the file diff-html-list.txt
   conditional_job:
