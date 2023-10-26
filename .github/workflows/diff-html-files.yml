@@ -65,7 +65,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - name: HTML files didn't change
+      name: HTML files didn't change
     run:
       # HTML files didn't change
       echo "HTML files didn't change"
