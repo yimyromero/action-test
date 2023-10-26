@@ -1,6 +1,8 @@
 < dist/en/domains/asyncapi-components.html
 < dist/en/manage-apis/generating-code/code-generation-options.html
 < dist/en/plans-and-billing.html
+< dist/en/referred-topics.html
 > dist/en/domains/asyncapi-components-EDITED.html
 > dist/en/manage-apis/sharing-apis-added.html
 > dist/en/plans-and-billing-added.html
+> dist/en/referred-topics-EDITED.html
