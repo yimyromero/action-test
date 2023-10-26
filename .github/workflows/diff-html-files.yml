@@ -65,9 +65,11 @@ jobs:
     if: needs.html_list_changed.outputs.html_list_changed == 'false'
     runs-on: ubuntu-latest
     steps:
-      run: |
-        # HTML files didn't change
-        echo "HTML files didn't change"
+    - uses: actions/checkout@v3
+    - name: HTML files didn't change
+    run:
+      # HTML files didn't change
+      echo "HTML files didn't change"
 
 
     
