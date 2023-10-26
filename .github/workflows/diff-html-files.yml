@@ -49,8 +49,8 @@ jobs:
         git push origin main
     # Check if the file diff-html-list.txt changed
     - name: Check if the file diff-html-list.txt changed
+      shell: bash {0}
       id: check_list_changed
-      continue-on-error: true
       run: |
         git diff --name-only HEAD^ HEAD | grep diff-html-list.txt
         if [ $? -eq 0 ]; then
@@ -62,7 +62,7 @@ jobs:
   # This job will run only if the previous job changed the file diff-html-list.txt
   conditional_job:
     needs: html_list_changed
-    if: needs.html_list_changed.outputs.html_list_changed == 'true'
+    if: needs.html_list_changed.outputs.html_list_changed == 'false'
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
