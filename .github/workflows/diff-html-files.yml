@@ -50,6 +50,7 @@ jobs:
           git commit --allow-empty -m "update list of current html files"
           git push origin main
       # Check if the file diff-html-list.txt changed
+      - name: Check if the file diff-html-list.txt changed
         run: |
           git diff --name-only HEAD^ HEAD | grep diff-html-list.txt
           if [ $? -eq 0 ]; then
@@ -58,15 +59,15 @@ jobs:
             echo "::set-output name=html_list_changed::false"
           fi
 
-# This job will run only if the previous job changed the file diff-html-list.txt
-conditional_job:
-  needs: html_list_changed
-  if: needs.html_list_changed.outputs.html_list_changed == 'false'
-  runs-on: ubuntu-latest
-  steps:
-    run: |
-      # HTML files didn't change
-      echo "HTML files didn't change"
+  # This job will run only if the previous job changed the file diff-html-list.txt
+  conditional_job:
+    needs: html_list_changed
+    if: needs.html_list_changed.outputs.html_list_changed == 'false'
+    runs-on: ubuntu-latest
+    steps:
+      run: |
+        # HTML files didn't change
+        echo "HTML files didn't change"
 
 
     
