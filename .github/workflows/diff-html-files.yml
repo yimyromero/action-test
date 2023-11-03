@@ -62,7 +62,7 @@ jobs:
   # This job will run only if the previous job changed the file diff-html-list.txt
   conditional_job:
     needs: html_list_changed
-    if: needs.html_list_changed.check_list_changed.html_list_changed == 'false'
+    if: needs.html_list_changed.outputs.html_list_changed == 'false'
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
