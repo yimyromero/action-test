@@ -36,6 +36,11 @@ jobs:
         find dist -name '*.html' | sort > new-html-list.txt
         diff --suppress-common-lines current-html-list.txt new-html-list.txt | grep -E '^[< >]' | sort > diff-html-list.txt
         rm new-html-list.txt
+    - name: setup git config
+      run: |
+        # setup username and email
+        git config user.name "yimy"
+        git config user.email "<>"
     - name: commit 
       run: |
         # commit and push
