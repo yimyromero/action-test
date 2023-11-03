@@ -39,7 +39,7 @@ jobs:
     - name: setup git config
       run: |
         # setup username and email
-        git config user.name "yimy"
+        git config user.name "yimyromero"
         git config user.email "<>"
     - name: commit 
       run: |
@@ -54,15 +54,15 @@ jobs:
       run: |
         git diff --name-only HEAD^ HEAD | grep diff-html-list.txt
         if [ $? -eq 0 ]; then
-          echo "::set-output name=html_list_changed::true"
+          echo "html_list_changed=true" >> $GITHUB_OUTPUT
         else
-          echo "::set-output name=html_list_changed::false"
+          echo "html_list_changed=false" >> $GITHUB_OUTPUT
         fi
 
   # This job will run only if the previous job changed the file diff-html-list.txt
   conditional_job:
     needs: html_list_changed
-    if: needs.html_list_changed.outputs.html_list_changed == 'false'
+    if: needs.html_list_changed.check_list_changed.outputs.html_list_changed == 'false'
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
