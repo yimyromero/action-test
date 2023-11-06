@@ -70,7 +70,7 @@ jobs:
             "product" : ${{ vars.PRODUCT }},
             "cause" : "File udpated",
             "priority" : "High",
-            "file_list" : ${{ steps.get_file_list.outputs.file_list }}
+            "file_list" : ${{ toJSON(steps.get_file_list.outputs.file_list) }}
           }
       env:
         SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
