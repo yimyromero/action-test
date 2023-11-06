@@ -73,7 +73,7 @@ jobs:
             "product" : ${{ vars.PRODUCT }},
             "cause" : "File udpated",
             "priority" : "High",
-            "file_list" : ${{ toJSON(steps.get_file_list.outputs.JSON_RESPONSE)}},
+            "file_list" : "${{steps.get_file_list.outputs.JSON_RESPONSE}}"
           }
       env:
         SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
