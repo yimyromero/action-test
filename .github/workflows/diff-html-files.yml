@@ -61,6 +61,14 @@ jobs:
     - name: Send GitHub Action trigger data to Slack workflow
       id: slack
       uses: slackapi/slack-github-action@v1.24.0
+      with:
+        payload: |
+          {
+            "product" : ${{ vars.PRODUCT }},
+            "cause" : "File udpated",
+            "priority" : "High",
+            "file_list" : ${{ steps.check_list_changed.outputs.html_list_changed }}
+          }
       env:
         SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
 
