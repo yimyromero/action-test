@@ -70,7 +70,7 @@ jobs:
       with:
         payload: |
           {
-            "product" : ${{ vars.PRODUCT }},
+            "product" : "${{ vars.PRODUCT }}",
             "cause" : "File udpated",
             "priority" : "High",
             "files_list" : "${{steps.get_file_list.outputs.JSON_RESPONSE}}"
