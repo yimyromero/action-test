@@ -36,6 +36,9 @@ jobs:
         find dist -name '*.html' | sort > new-html-list.txt
         diff --suppress-common-lines current-html-list.txt new-html-list.txt | grep -E '^[< >]' | sort > diff-html-list.txt
         rm new-html-list.txt
+    - name: Read file diff-html-list.txt
+      id: get_file_list
+      run: echo "file_list=$(cat diff-html-list.txt)" >> $GITHUB_OUTPUT
     - name: setup git config
       run: |
         # setup username and email
@@ -67,7 +70,7 @@ jobs:
             "product" : ${{ vars.PRODUCT }},
             "cause" : "File udpated",
             "priority" : "High",
-            "file_list" : ${{ steps.check_list_changed.outputs.html_list_changed }}
+            "file_list" : ${{ steps.get_file_list.outputs.file_list }}
           }
       env:
         SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
