@@ -70,9 +70,9 @@ jobs:
       with:
         payload: |
           {
-            "product" : "Product - ${{ vars.PRODUCT }}",
+            "product" : "Product  ${{ vars.PRODUCT }}",
             "cause" : "Cause  Files added/removed",
-            "todo" : "TODO - Update _redirects file",
+            "todo" : "TODO  Update _redirects file",
             "description" : ${{ toJSON("starting with the < sign means removed and the > sign means added" ) }},
             "files_list" : ${{ toJSON(steps.get_file_list.outputs.JSON_RESPONSE) }}
           }
