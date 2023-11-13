@@ -41,8 +41,10 @@ jobs:
 
         if [ $? -eq 0 ]; then
           echo "html_list_changed=true" >> $GITHUB_OUTPUT
+          echo "true"
         else
           echo "html_list_changed=false" >> $GITHUB_OUTPUT
+          echo "false"
         fi
     - name: commit diff-html-list.txt if it changed
       if: steps.check_list_changed.outputs.html_list_changed == 'true'
