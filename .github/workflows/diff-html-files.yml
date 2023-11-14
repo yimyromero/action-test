@@ -37,13 +37,14 @@ jobs:
         touch new-html-list.txt,
         find dist -name '*.html' | sort > new-html-list.txt
         diff --suppress-common-lines current-html-list.txt new-html-list.txt | grep -E '^[< >]' > diff-html-list.txt
-        rm new-html-list.txt
-
+      
         if [ $? -eq 0 ]; then
           echo "html_list_changed=true" >> $GITHUB_OUTPUT
         else
           echo "html_list_changed=false" >> $GITHUB_OUTPUT
         fi
+
+        rm new-html-list.txt
     - name: commit diff-html-list.txt if it changed
       if: steps.check_list_changed.outputs.html_list_changed == 'true'
       run: |
