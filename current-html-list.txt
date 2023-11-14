@@ -1,4 +1,4 @@
-dist/en/about.html
+dist/en/about-EDITED.html
 dist/en/account-settings.html
 dist/en/account-settings/account-management-for-on-premise.html
 dist/en/account-settings/account-management-for-on-premise/changing-your-password.html
@@ -8,7 +8,7 @@ dist/en/account-settings/account-management-for-on-premise/renaming-your-account
 dist/en/account-settings/account-settings-for-saas-users.html
 dist/en/asyncapi-support.html
 dist/en/domains.html
-dist/en/domains/asyncapi-components.html
+dist/en/domains/asyncapi-components-EDITED.html
 dist/en/domains/asyncapi-domain-example.html
 dist/en/domains/creating-a-domain.html
 dist/en/domains/managing-domains.html
@@ -27,7 +27,7 @@ dist/en/edit-apis/lazy-loading.html
 dist/en/edit-apis/searching-swaggerhub.html
 dist/en/edit-apis/swaggerhub-ui-overview.html
 dist/en/edit-apis/visual-editor-for-openapi-definitions.html
-dist/en/faq.html
+dist/en/faq-EDITED.html
 dist/en/get-email-notifications.html
 dist/en/get-started.html
 dist/en/get-started/asyncapi-how-to.html
@@ -73,7 +73,6 @@ dist/en/manage-apis/deleting-apis.html
 dist/en/manage-apis/downloading-api-definitions-from-swaggerhub.html
 dist/en/manage-apis/forking-an-api.html
 dist/en/manage-apis/generating-code.html
-dist/en/manage-apis/generating-code/code-generation-options.html
 dist/en/manage-apis/generating-code/generating-a-client-sdk.html
 dist/en/manage-apis/generating-code/generating-a-server-stub.html
 dist/en/manage-apis/importing-api-definitions.html
@@ -82,6 +81,7 @@ dist/en/manage-apis/public-and-private-apis.html
 dist/en/manage-apis/publishing-an-api.html
 dist/en/manage-apis/renaming-apis.html
 dist/en/manage-apis/saving-an-api-as-a-new-api.html
+dist/en/manage-apis/sharing-apis-added.html
 dist/en/manage-apis/sharing-apis.html
 dist/en/manage-apis/sharing-apis/comments.html
 dist/en/manage-apis/sharing-apis/sharing-apis.html
@@ -216,7 +216,7 @@ dist/en/on-premise-administrator-guide/swaggerhub-on-premise-support-policy.html
 dist/en/on-premise-administrator-guide/usage-data-collection.html
 dist/en/openapi-3-0-support.html
 dist/en/openapi-3-1-support.html
-dist/en/plans-and-billing.html
+dist/en/plans-and-billing-added.html
 dist/en/plans-and-billing/billing-history.html
 dist/en/plans-and-billing/changing-an-organization-s-billing-email-address.html
 dist/en/plans-and-billing/changing-credit-card-information.html
@@ -225,7 +225,7 @@ dist/en/plans-and-billing/downgrading-to-a-free-plan.html
 dist/en/plans-and-billing/proration.html
 dist/en/plans-and-billing/switching-between-monthly-and-annual-billing.html
 dist/en/plans-and-billing/upgrading-from-a-free-to-a-paid-plan.html
-dist/en/referred-topics.html
+dist/en/referred-topics-EDITED.html
 dist/en/referred-topics/browser-support.html
 dist/en/referred-topics/online-installation-into-existing-openshift-cluster.html
 dist/en/referred-topics/using-swaggerhub-on-premise.html
