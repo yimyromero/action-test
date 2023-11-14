@@ -38,7 +38,7 @@ dist/en/get-started/openapi-3-0-tutorial.html
 dist/en/get-started/openapi-how-to.html
 dist/en/get-started/swagger--openapi-2-0--tutorial.html
 dist/en/get-started/working-with-others---saas.html
-dist/en/index-en.html
+dist/en/index-en-EDITED.html
 dist/en/integrations.html
 dist/en/integrations/amazon-api-gateway-integration.html
 dist/en/integrations/amazon-api-gateway-lambda-sync.html
