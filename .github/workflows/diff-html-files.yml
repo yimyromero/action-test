@@ -72,7 +72,7 @@ jobs:
       with:
         payload: |
           {
-            "product" : "Product  ${{ vars.PRODUCT }}",
+            "product_name" : "Product  ${{ vars.PRODUCT }}",
             "file_list" : ${{ toJSON(steps.get_file_list.outputs.JSON_RESPONSE) }}
           }
       env:
