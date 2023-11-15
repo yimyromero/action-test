@@ -1,2 +1,2 @@
-< dist/en/index-en.html
-> dist/en/index-en-EDITED.html
+< dist/en/toc-en.html
+> dist/en/toc-en-EDITED.html
