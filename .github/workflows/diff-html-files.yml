@@ -72,8 +72,9 @@ jobs:
       with:
         payload: |
           {
-            "product_name" : "Product  ${{ vars.PRODUCT }}",
-            "file_list" : ${{ toJSON(steps.get_file_list.outputs.JSON_RESPONSE) }}
+            "product_name" : "${{ vars.PRODUCT }}",
+            "file_list" : ${{ toJSON(steps.get_file_list.outputs.JSON_RESPONSE) }},
+            "docs_repo_name": "${{ github.repository }}"
           }
       env:
         SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
