@@ -62,7 +62,7 @@ jobs:
       if: steps.check_list_changed.outputs.html_list_changed == 'true'
       run: |
         echo 'JSON_RESPONSE<<EOF' >> $GITHUB_OUTPUT
-        cat diff-html-list.txt | sort >> $GITHUB_OUTPUT
+        cat diff-html-list.txt | sed 's/^</-/' | sed 's/^>/+/' | sort >> $GITHUB_OUTPUT
         echo 'EOF' >> $GITHUB_OUTPUT
     
     - name: Send GitHub Action trigger data to Slack workflow
